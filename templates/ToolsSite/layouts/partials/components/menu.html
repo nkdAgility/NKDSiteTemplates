@@ -16,9 +16,16 @@
       <ul class="navbar-nav me-auto">
         {{ range .Site.Menus.main }}
           <li class="nav-item">
-            <a class="nav-link{{ if $.IsMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}">
-              {{ .Name }}
-            </a>
+            {{ if or (hasPrefix .URL "http://") (hasPrefix .URL "https://") }}
+              <a class="nav-link{{ if $.IsMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}" target="_blank" rel="noopener noreferrer">
+                {{ .Name }}
+                <i class="fas fa-external-link-alt ms-1" style="font-size: 0.75em;"></i>
+              </a>
+            {{ else }}
+              <a class="nav-link{{ if $.IsMenuCurrent "main" . }}active{{ end }}" href="{{ .URL }}">
+                {{ .Name }}
+              </a>
+            {{ end }}
           </li>
         {{ end }}
       </ul>

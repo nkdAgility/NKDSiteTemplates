@@ -41,7 +41,7 @@
         {{ if eq hugo.Environment "development" }}
           Local | v0.0.0 | No Robots
         {{ else }}
-          #{ToolsTemplates_AzureSitesConfig}# | v#{GitVersion.SemVer}# | No Robots
+          #{ToolsTemplates_AzureSitesConfig}# | v{{ .Site.Params.version | default "v0.0.0-local" }} | No Robots
         {{ end }}
         | <a href="#debugArea">Debug Info</a>
       </div>

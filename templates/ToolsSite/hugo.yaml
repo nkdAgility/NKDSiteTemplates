@@ -14,7 +14,10 @@ taxonomies: {}
 # Sections will be automatically added via front matter in their _index.md files
 # Manual entries can still be added here if needed
 menu:
-  main: []
+  main:
+    - name: "Discussions"
+      url: "https://github.com/nkdAgility/azure-devops-migration-tools/discussions"
+      weight: 100
 
 # Site-wide parameters
 params:
@@ -25,6 +28,8 @@ params:
   supportEmail: "support@organisation.org"
   githubUrl: "https://github.com/organisation/repo"
   googleTagId: "G-TSHSKGHDK"
+  version: "#{GitVersion.SemVer}#"
+  ring: "#{ToolsTemplates_AzureSitesConfig}#"
 
 # Enable sitemap and robots.txt
 sitemap:
