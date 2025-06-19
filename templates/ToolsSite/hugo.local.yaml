@@ -1,0 +1,12 @@
+Environment: "development"
+
+buildDrafts: true
+buildFuture: true
+buildExpired: true
+
+disableAliases: true
+
+module:
+  mounts:
+    - source: "../../site/content"
+      target: "content"

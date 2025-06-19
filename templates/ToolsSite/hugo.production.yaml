@@ -1,0 +1,3 @@
+baseURL: /
+Environment: "production"
+minifyOutput: true

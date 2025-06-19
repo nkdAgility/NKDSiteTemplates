@@ -1,0 +1,64 @@
+title: Demo Site
+
+publishDir: ../ToolSite_public
+resourceDir: ../ToolSite_resources
+
+summaryLength: 30
+
+enableRobotsTXT: true
+
+# Disable default taxonomies (tags and categories)
+taxonomies: {}
+
+# Menu configuration
+# Sections will be automatically added via front matter in their _index.md files
+# Manual entries can still be added here if needed
+menu:
+  main: []
+
+# Site-wide parameters
+params:
+  description: "organisation is a demo site for the Tenplates, showcasing its features and capabilities."
+  keywords: "Scrum"
+  og_image: "/images/og-image.jpg" # URL to the default Open Graph image
+  siteProdUrl: "https://organisation.org"
+  supportEmail: "support@organisation.org"
+  githubUrl: "https://github.com/organisation/repo"
+  googleTagId: "G-TSHSKGHDK"
+
+# Enable sitemap and robots.txt
+sitemap:
+  filename: "sitemap.xml"
+  changefreq: "daily"
+  priority: 0.5
+
+# RSS feed settings
+rss:
+  filename: "rss.xml"
+  name: "RSS Feed"
+  description: "Subscribe to our RSS feed"
+
+outputs:
+  home: [html, json, rss]
+  section: [html, rss]
+  taxonomy: [html, rss]
+  term: [html, rss]
+  page: [html, rss]
+
+outputFormats:
+  json:
+    mediaType: "application/json"
+    baseName: "pages"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows raw HTML in Markdown
+    extensions:
+      table: true
+      linkify: true
+      typographer: true
+    parser:
+      attribute:
+        block: true
+        title: true
