@@ -1,12 +1,13 @@
 ---
-title: "Documentation for the Azure DevOps Migration Tools"
-description: "Complete documentation for the Azure DevOps Migration Tools, including setup guides, configuration references, and how-to articles."
+title: Documentation for the Azure DevOps Migration Tools
+description: Complete documentation for the Azure DevOps Migration Tools, including setup guides, configuration references, and how-to articles.
 menu:
   main:
-    name: "docs"
+    name: docs
     weight: 1
----
+date: 2025-06-24T12:07:31Z
 
+---
 Welcome to the Azure DevOps Migration Tools documentation. This comprehensive guide will help you understand, configure, and use the tools effectively for your migration and bulk editing needs.
 
 ## Quick Start

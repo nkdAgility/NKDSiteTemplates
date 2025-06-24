@@ -420,12 +420,16 @@ function Get-HugoMarkdownListAsHashTable {
 function Get-RecentHugoMarkdownResources {
     param (
         [string]$Path = ".\site\content\resources",
-        [int]$YearsBack = 10
+        [int]$YearsBack = -10
     )
 
     Write-DebugLog "Retrieving markdown files from '$Path'..."
-
-    $cutoffDate = (Get-Date).AddYears(-$YearsBack)
+    if ($YearsBack -lt 0) {
+        $cutoffDate = [datetime]::MinValue
+    }
+    else {
+        $cutoffDate = (Get-Date).AddYears(-$YearsBack)
+    }
     $resources = Get-ChildItem -Path "$Path\*" -Recurse -Include "index.md", "_index.md" | Sort-Object { $_ } -Descending
     $resourceCount = $resources.Count
     $progressStep = [math]::Ceiling($resourceCount / 10)
@@ -466,7 +470,10 @@ function Get-RecentHugoMarkdownResources {
             $date = [DateTime]::Parse($_.FrontMatter.date)
             return $date -gt $cutoffDate
         }
-        return $false
+        else {
+            $_.FrontMatter.date = (Get-Date).ToString("yyyy-MM-ddTHH:mm:ssZ")
+        }
+        return $true
     } | Sort-Object { [DateTime]::Parse($_.FrontMatter.date) } -Descending
 
     Write-InformationLog "Filtered to ($($filtered.Count)) recent HugoMarkdown Objects."

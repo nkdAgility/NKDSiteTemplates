@@ -1,9 +1,10 @@
 ---
-title: "How-To: User Mappings"
-short_title: "User Mappings"
-discussionId:
----
+title: 'How-To: User Mappings'
+short_title: User Mappings
+discussionId: 
+date: 2025-06-24T12:07:31Z
 
+---
 There was a request to have the ability to map users to try and maintain integrity across different systems. We added a `TfsUserMappingEnricher` that allows you to map users from Source to Target... this is not free and takes some work. Running the `ExportUsersForMappingConfig` to get the list of users will produce:
 
 ```

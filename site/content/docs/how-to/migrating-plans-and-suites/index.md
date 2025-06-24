@@ -1,9 +1,10 @@
 ---
-title: "How-to: Migrating Plans and Suites"
-short_title: "Migrating Plans and Suites"
-discussionId:
----
+title: 'How-to: Migrating Plans and Suites'
+short_title: Migrating Plans and Suites
+discussionId: 
+date: 2025-06-24T12:07:31Z
 
+---
 Migrating Plans and Suites is quite convoluted since Shared Steps, which we need to map, can't have a custom field.
 
 1. Migrate Basic Work Items
