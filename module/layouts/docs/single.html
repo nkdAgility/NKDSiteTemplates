@@ -45,8 +45,8 @@
                         {{ $urlpath := replace $raw "\\" "/" }}
                         | <a href="{{ .Site.Params.editPage }}{{ $urlpath }}" target="_blank" class="text-decoration-none"> <i class="fas fa-edit me-1"></i>Edit this page </a>
                       {{ end }}
-                      {{ if .Site.Params.discussionId }}
-                        | <a href="https://github.com/nkdAgility/azure-devops-migration-tools/discussions/{{ .Site.Params.discussionId }}" target="_blank" class="text-decoration-none"> <i class="fas fa-comments me-1"></i>Discuss this page </a>
+                      {{ if .Params.discussionId }}
+                        | <a href="https://github.com/nkdAgility/azure-devops-migration-tools/discussions/{{ .Params.discussionId }}" target="_blank" class="text-decoration-none"> <i class="fas fa-comments me-1"></i>Discuss this page </a>
                       {{ else }}
                         | <a href="https://github.com/nkdAgility/azure-devops-migration-tools/discussions/" target="_blank" class="text-decoration-none"> <i class="fas fa-comments me-1"></i>Discuss this page </a>
                       {{ end }}
