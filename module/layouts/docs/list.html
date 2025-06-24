@@ -84,8 +84,13 @@
                 </div>
               {{ end }}
 
+              {{/* Page content */}}
+              <div class="docs-body">
+                {{ .Content }}
+              </div>
+
               {{/* Getting started section */}}
-              {{ $gettingStarted := .Site.GetPage "/docs/getstarted" }}
+              {{ $gettingStarted := .Site.GetPage "/docs/get-started/getting-started/" }}
               {{ if $gettingStarted }}
                 <div class="docs-getting-started mt-5">
                   <div class="alert alert-primary" role="alert">

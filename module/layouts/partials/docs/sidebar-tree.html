@@ -17,7 +17,11 @@
           {{/* Section headers for main categories at level 0 */}}
           {{ if eq $level 0 }}
             <div class="sidebar-section-title">
-              {{ .Title }}
+              {{ if .Params.short_title }}
+                {{ .Params.short_title }}
+              {{ else }}
+                {{ .Title }}
+              {{ end }}
             </div>
           {{ else }}
             {{/* Regular navigation links for deeper levels */}}

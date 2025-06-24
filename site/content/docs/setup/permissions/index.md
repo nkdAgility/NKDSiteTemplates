@@ -1,11 +1,12 @@
 ---
 title: Permissions
-layout: page
-pageType: index
-toc: true
-pageStatus: published
-discussionId: 
-redirect_from:
+short_title: Permissions
+description: |
+  The current permissions are governed by the requirements of the TFS Client Object Model from Microsoft.
+  While Microsoft announced the deprecation of the WIT and Test Client OM in 2020, it remains the only consistent method for interacting with versions of TFS from 2010 to 2018.
+date: 2025-06-24T12:07:31Z
+discussionId:
+aliases:
   - /permissions/
 ---
 
