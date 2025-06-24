@@ -1,4 +1,4 @@
-title: Azure DevOps Migration Tools
+title: Demo Module
 
 publishDir: ../public
 resourceDir: ../resources
@@ -9,15 +9,6 @@ enableRobotsTXT: true
 
 # Disable default taxonomies (tags and categories)
 taxonomies: {}
-
-# Menu configuration
-# Sections will be automatically added via front matter in their _index.md files
-# Manual entries can still be added here if needed
-menu:
-  main:
-    - name: "Discussions"
-      url: "https://github.com/nkdAgility/azure-devops-migration-tools/discussions"
-      weight: 100
 
 # Site-wide parameters
 params:
