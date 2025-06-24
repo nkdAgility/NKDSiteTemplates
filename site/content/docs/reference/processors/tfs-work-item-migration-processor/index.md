@@ -3,14 +3,38 @@ title: Tfs Work Item Migration Processor
 dataFile: data/reference.processors.tfsworkitemmigrationprocessor.yaml
 slug: tfs-work-item-migration-processor
 aliases:
-- /docs/Reference/Processors/TfsWorkItemMigrationProcessor
-- /Reference/Processors/TfsWorkItemMigrationProcessor
-- /learn/azure-devops-migration-tools/Reference/Processors/TfsWorkItemMigrationProcessor
-- /learn/azure-devops-migration-tools/Reference/Processors/TfsWorkItemMigrationProcessor/index.md
+  - /docs/Reference/Processors/TfsWorkItemMigrationProcessor
+  - /Reference/Processors/TfsWorkItemMigrationProcessor
+  - /learn/azure-devops-migration-tools/Reference/Processors/TfsWorkItemMigrationProcessor
+  - /learn/azure-devops-migration-tools/Reference/Processors/TfsWorkItemMigrationProcessor/index.md
 date: 2025-06-24T12:07:31Z
 discussionId: 2681
-
 ---
+
+{{< class-description >}}
+
+## Options
+
+{{< class-options >}}
+
+## Samples
+
+### Sample
+
+{{< class-sample sample="sample" >}}
+
+### Defaults
+
+{{< class-sample sample="defaults" >}}
+
+### Classic
+
+{{< class-sample sample="classic" >}}
+
+## Metadata
+
+{{< class-metadata >}}
+
 The `WorkItemMigrationContext` processor is used for migrating work items from one Azure DevOps instance to another. This encompasses a variety of activities:
 
 1. **Transferring Work Items Between Instances**: The primary purpose of the processor is to transfer work items, including bugs, tasks, user stories, features, and more, from one Azure DevOps instance to another.

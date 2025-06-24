@@ -3,13 +3,37 @@ title: Tfs Node Structure Tool
 dataFile: data/reference.tools.tfsnodestructuretool.yaml
 slug: tfs-node-structure-tool
 aliases:
-- /docs/Reference/Tools/TfsNodeStructureTool
-- /Reference/Tools/TfsNodeStructureTool
-- /learn/azure-devops-migration-tools/Reference/Tools/TfsNodeStructureTool
-- /learn/azure-devops-migration-tools/Reference/Tools/TfsNodeStructureTool/index.md
+  - /docs/Reference/Tools/TfsNodeStructureTool
+  - /Reference/Tools/TfsNodeStructureTool
+  - /learn/azure-devops-migration-tools/Reference/Tools/TfsNodeStructureTool
+  - /learn/azure-devops-migration-tools/Reference/Tools/TfsNodeStructureTool/index.md
 date: 2025-06-24T12:07:31Z
-
 ---
+
+{{< class-description >}}
+
+## Options
+
+{{< class-options >}}
+
+## Samples
+
+### Sample
+
+{{< class-sample sample="sample" >}}
+
+### Defaults
+
+{{< class-sample sample="defaults" >}}
+
+### Classic
+
+{{< class-sample sample="classic" >}}
+
+## Metadata
+
+{{< class-metadata >}}
+
 ## Iteration Maps and Area Maps
 
 **NOTE: It is NOT posible to migrate a work item if the Area or Iteration path does not exist on the target project. This is because the work item will be created with the same Area and Iteration path as the source work item. If the path does not exist, the work item will not be created. _There is not way around this!_**

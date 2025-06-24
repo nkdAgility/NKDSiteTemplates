@@ -26,9 +26,9 @@
               <div class="docs-header mb-4">
                 <h1 class="docs-title">{{ .Title }}</h1>
                 {{ if .Params.description }}
-                  <p class="docs-description text-muted">{{ .Params.description }}</p>
+                  <p class="docs-description text-muted">{{ .Params.description | markdownify }}</p>
                 {{ else if .Content }}
-                  <div class="docs-description">{{ .Content }}</div>
+                  <div class="docs-description">{{ .Content | markdownify }}</div>
                 {{ end }}
               </div>
 
@@ -86,7 +86,7 @@
 
               {{/* Page content */}}
               <div class="docs-body">
-                {{ .Content }}
+                {{ .Content | markdownify }}
               </div>
 
               {{/* Getting started section */}}

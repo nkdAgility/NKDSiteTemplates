@@ -30,7 +30,7 @@
               <div class="docs-header mb-4">
                 <h1 class="docs-title">{{ .Title }}</h1>
                 {{ if .Params.description }}
-                  <p class="docs-description text-muted">{{ .Params.description }}</p>
+                  <p class="docs-description text-muted">{{ .Params.description | markdownify }}</p>
                 {{ end }}
 
                 {{/* Edit link if available */}}
@@ -57,10 +57,6 @@
 
               {{/* Page content */}}
               <div class="docs-body">
-                {{/* Optional class data */}}
-                {{ if .Params.dataFile }}
-                  {{ partial "docs/class-data.html" . }}
-                {{ end }}
                 {{ .Content }}
               </div>
 
@@ -94,22 +90,10 @@
           {{/* Table of contents (optional right sidebar) */}}
           <div class="col-12 col-xl-3 d-none d-xl-block">
             <div>
-              <img src="/images/Azure-DevOps-Migration-Tools-GithubSocial-Image.jpg" alt="Azure DevOps Migration Tools Logo" class="img-fluid mb-3" />
-            </div>
-            <div>
               <h5>In this article</h5>
               <div class="docs-toc">
                 <nav>
                   <ul>
-                    {{/* Custom TOC items */}}
-                    {{ if .Params.dataFile }}
-
-                      <li><a href="#options">Options</a></li>
-                      <li><a href="#examples">Examples</a></li>
-                      <li><a href="#metadata">Metadata </a></li>
-                      <li><hr /></li>
-                    {{ end }}
-
                     {{/* Generated TOC */}}
                     {{ if .TableOfContents }}
                       {{ .TableOfContents | safeHTML }}
