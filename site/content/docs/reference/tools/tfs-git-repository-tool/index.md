@@ -8,6 +8,7 @@ aliases:
 - /learn/azure-devops-migration-tools/Reference/Tools/TfsGitRepositoryTool
 - /learn/azure-devops-migration-tools/Reference/Tools/TfsGitRepositoryTool/index.md
 date: 2025-06-24T12:07:31Z
+discussionId: 2490
 
 ---
 

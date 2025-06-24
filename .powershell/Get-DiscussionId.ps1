@@ -396,8 +396,8 @@ function Find-OrCreateDiscussion {
         if ($discussions -and $discussions.Count -gt 0) {
             # Find the most relevant discussion
             $existingDiscussion = $discussions | Where-Object { 
-                $_.title -like "*$className*" -or 
-                $_.title -like "*$friendlyName*" -or 
+                $_.title -eq "$className" -or 
+                $_.title -eq "$friendlyName" -or 
                 $_.title -eq $title 
             } | Select-Object -First 1
             
@@ -526,7 +526,7 @@ foreach ($hugoMarkdown in $hugoMarkdownObjects) {
     
     if ($discussion) {
         # Determine if this was a new discussion or existing one
-        $isNewDiscussion = $discussion.createdAt -and ([DateTime]::Parse($discussion.createdAt) -gt (Get-Date).AddMinutes(-5))
+        $isNewDiscussion = $discussion.createdAt -and ($discussion.createdAt -gt (Get-Date).AddMinutes(-5))
         
         if ($isNewDiscussion) {
             $stats.Created++
@@ -561,9 +561,9 @@ foreach ($hugoMarkdown in $hugoMarkdownObjects) {
 }
 
 # Summary report
-Write-InformationLog "`n" + "="*50
+Write-InformationLog ("`n" + "=" * 50)
 Write-InformationLog "PROCESSING SUMMARY"
-Write-InformationLog "="*50
+Write-InformationLog ("=" * 50)
 Write-InformationLog "Total files processed: $($stats.Total)"
 Write-InformationLog "Files with existing discussion IDs (skipped): $($stats.Skipped)"
 Write-InformationLog "New discussions created: $($stats.Created)"
