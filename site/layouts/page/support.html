@@ -1,0 +1,46 @@
+{{- define "main" }}
+  <section class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-4 mb-3">Support for Azure DevOps Migration Tools</h1>
+      <h2 class="h4 text-muted">Open source and free to use.</h2>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 col-xl-6 mb-4">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <div class="mb-4">
+            <i class="fas fa-users" style="font-size: 4rem; color: #0078d4;"></i>
+          </div>
+          <p>Join our vibrant community of users and contributors. Get help, share your experiences, and collaborate on improving the Azure DevOps Migration Tools.</p>
+          <a href="https://github.com/nkdAgility/azure-devops-migration-tools/discussions" class="btn btn-primary btn-lg w-100" target="_blank"> <i class="fa-solid fa-download me-2"></i>Community Support </a>
+        </div>
+      </div>
+      <div class="col-12 col-xl-6 mb-4">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <div class="mb-4">
+            <img
+              id="brandLogo"
+              data-theme-src-light="https://nkdagility.com/blob/images/nkdagility-with-martin-hinshelwood-light-300px.png"
+              data-theme-src-dark="https://nkdagility.com/blob/images/nkdagility-with-martin-hinshelwood-dark-300px.png"
+              style="height:50px;"
+              alt="{{ .Site.Title }}" />
+          </div>
+          <p>NKD Agility is your trusted partner for Azure DevOps migrations. With extensive experience and a proven track record, we ensure your transition to Azure DevOps is smooth, efficient, and tailored to your unique needs.</p>
+          <a href="https://nkdagility.com/capabilities/azure-devops-migration-services/" class="btn btn-primary btn-lg w-100 " target="_blank"> <i class="fa-solid fa-download me-2"></i>Commercial Support </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 col-md-10">
+        <div class="text-center text-muted small">
+          By downloading and using the Azure DevOps Migration Tools, you agree to the <a href="https://github.com/nkdAgility/azure-devops-migration-tools/blob/main/LICENSE" target="_blank">license terms</a> and
+          <a href="https://nkdagility.com/company/privacy/" target="_blank">privacy statement</a>.
+        </div>
+      </div>
+    </div>
+  </section>
+{{- end }}
+{{- define "template" }}
+  page/support.html
+{{- end }}

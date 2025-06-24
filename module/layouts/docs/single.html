@@ -1,6 +1,6 @@
 {{- define "main" }}
   <div class="container-fluid py-4">
-    <div class="container content-docs">
+    <div class="container container-docs">
       <div class="row">
         {{/* Sidebar */}}
         <div class="col-12 col-xl-3 docs-navbar-container">
@@ -80,6 +80,9 @@
         </div>
         {{/* Table of contents (optional right sidebar) */}}
         <div class="col-12 col-xl-3 d-none d-xl-block">
+          <div>
+            <img src="/images/Azure-DevOps-Migration-Tools-GithubSocial-Image.jpg" alt="Azure DevOps Migration Tools Logo" class="img-fluid mb-3" />
+          </div>
           <div>
             <h5>In this article</h5>
             <div class="docs-toc">
@@ -173,97 +176,6 @@
       </div>
     </div>
   </div>
-
-  <style>
-    .docs-content {
-      max-width: none;
-    }
-
-    .docs-title {
-      color: var(--bs-primary);
-      border-bottom: 2px solid var(--bs-primary);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .docs-description {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .docs-body {
-      line-height: 1.7;
-    }
-
-    .docs-body h2,
-    .docs-body h3,
-    .docs-body h4 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .docs-body h2 {
-      border-bottom: 1px solid var(--bs-border-color);
-      padding-bottom: 0.5rem;
-    }
-
-    .docs-body pre {
-      background: var(--bs-light);
-      border: 1px solid var(--bs-border-color);
-      border-radius: 0.375rem;
-      padding: 1rem;
-      overflow-x: auto;
-    }
-
-    [data-bs-theme="dark"] .docs-body pre {
-      background: var(--bs-dark);
-      border-color: var(--bs-border-color);
-    }
-
-    .docs-toc {
-      position: sticky;
-      top: 20px;
-      max-height: calc(100vh - 40px);
-      overflow-y: auto;
-      font-size: 0.9rem;
-    }
-
-    .docs-toc nav > ul {
-      padding-left: 0;
-      list-style: none;
-    }
-
-    .docs-toc ul {
-      padding-left: 1rem;
-      list-style: none;
-    }
-
-    .docs-toc a {
-      display: block;
-      padding: 0.25rem 0;
-      color: var(--bs-body-color);
-      text-decoration: none;
-      border-left: 2px solid transparent;
-      padding-left: 0.5rem;
-    }
-
-    .docs-toc a:hover {
-      color: var(--bs-primary);
-      border-left-color: var(--bs-primary);
-    }
-
-    .docs-navigation {
-      border-top: 1px solid var(--bs-border-color);
-      padding-top: 2rem;
-    }
-
-    @media (max-width: 991.98px) {
-      .docs-content {
-        padding-left: 1rem;
-        padding-right: 1rem;
-      }
-    }
-  </style>
 {{- end }}
 
 {{- define "template" }}

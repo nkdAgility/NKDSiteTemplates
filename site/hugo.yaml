@@ -16,7 +16,10 @@ taxonomies: {}
 # Manual entries can still be added here if needed
 menu:
   main:
-    - name: "Discussions"
+    - name: "Support"
+      pageRef: "/support"
+      weight: 50
+    - name: "Community"
       url: "https://github.com/nkdAgility/azure-devops-migration-tools/discussions"
       weight: 100
 
@@ -33,6 +36,8 @@ params:
   version: "#{GitVersion.SemVer}#"
   ring: "#{ToolsTemplates_AzureSitesConfig}#"
   downloadUrl: "/download"
+  menu_image_light: "/images/logo-wide-transparent-light.png"
+  menu_image_dark: "/images/logo-wide-transparent-dark.png"
 
 # Enable sitemap and robots.txt
 sitemap:

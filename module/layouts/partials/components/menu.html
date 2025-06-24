@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container" style="max-width: 1300px;">
+<nav class="navbar navbar-expand-lg navbar-light py-5">
+  <div class="container">
     <!-- Brand/Logo -->
     <a class="navbar-brand fw-bold text-primary" href="{{ .Site.BaseURL }}">
-      {{ .Site.Title }}
+      <img id="brandLogo" data-theme-src-light="{{ .Site.Params.menu_image_light }}" data-theme-src-dark="{{ .Site.Params.menu_image_dark }}" src="{{ .Site.Params.menu_image_light }}" style="height:50px;" alt="{{ .Site.Title }}" />
     </a>
 
     <!-- Mobile toggle button -->
@@ -65,8 +65,27 @@
     const body = document.body;
     const navbar = document.querySelector(".navbar");
 
+    // Function to update all theme-aware images
+    function updateThemeImages(theme) {
+      // Find all images with theme data attributes
+      const themeImages = document.querySelectorAll("img[data-theme-src-light], img[data-theme-src-dark]");
+
+      themeImages.forEach((img) => {
+        const lightSrc = img.getAttribute("data-theme-src-light");
+        const darkSrc = img.getAttribute("data-theme-src-dark");
+
+        if (theme === "dark" && darkSrc) {
+          img.src = darkSrc;
+        } else if (lightSrc) {
+          img.src = lightSrc;
+        }
+      });
+    }
+
     // Check for saved theme preference or default to 'light'
-    const currentTheme = localStorage.getItem("theme") || "light"; // Apply the saved theme
+    const currentTheme = localStorage.getItem("theme") || "light";
+
+    // Apply the saved theme
     if (currentTheme === "dark") {
       body.setAttribute("data-bs-theme", "dark");
       navbar.classList.remove("navbar-light");
@@ -74,9 +93,11 @@
       navbar.style.backgroundColor = "";
       themeIcon.classList.remove("fa-sun");
       themeIcon.classList.add("fa-moon");
+      updateThemeImages("dark");
     } else {
       // Ensure light theme has transparent background
       navbar.style.backgroundColor = "transparent";
+      updateThemeImages("light");
     }
 
     // Theme toggle click handler
@@ -91,6 +112,7 @@
         themeIcon.classList.remove("fa-moon");
         themeIcon.classList.add("fa-sun");
         localStorage.setItem("theme", "light");
+        updateThemeImages("light");
       } else {
         // Switch to dark theme
         body.setAttribute("data-bs-theme", "dark");
@@ -100,6 +122,7 @@
         themeIcon.classList.remove("fa-sun");
         themeIcon.classList.add("fa-moon");
         localStorage.setItem("theme", "dark");
+        updateThemeImages("dark");
       }
     });
 
