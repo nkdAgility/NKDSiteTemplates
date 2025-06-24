@@ -1,0 +1,170 @@
+{{- define "main" }}
+  <div class="container-fluid py-4">
+    <div class="row">
+      {{/* Sidebar */}}
+      <div class="col-lg-3 col-xl-2 d-none d-lg-block">
+        {{ partial "docs/sidebar.html" . }}
+      </div>
+
+      {{/* Main content */}}
+      <div class="col-lg-9 col-xl-8">
+        <div class="docs-content">
+          {{/* Breadcrumbs */}}
+          {{ partial "docs/breadcrumbs.html" . }}
+
+          {{/* Page title */}}
+          <div class="docs-header mb-4">
+            <h1 class="docs-title">{{ .Title }}</h1>
+            {{ if .Params.description }}
+              <p class="docs-description text-muted">{{ .Params.description }}</p>
+            {{ end }}
+
+            {{/* Edit link if available */}}
+            {{ if .File }}
+              <div class="docs-meta mt-3">
+                <small class="text-muted">
+                  <i class="fas fa-clock me-1"></i>
+                  Last updated:
+                  {{ .Lastmod.Format "January 2, 2006" }}
+                  {{ if .Site.Params.editPage }}
+                    | <a href="{{ .Site.Params.editPage }}/{{ .File.Path }}" target="_blank" class="text-decoration-none"> <i class="fas fa-edit me-1"></i>Edit this page </a>
+                  {{ end }}
+                </small>
+              </div>
+            {{ end }}
+          </div>
+
+          {{/* Page content */}}
+          <div class="docs-body">
+            {{ .Content }}
+          </div>
+
+          {{/* Page navigation */}}
+          <div class="docs-navigation mt-5">
+            {{ partial "docs/page-navigation.html" . }}
+          </div>
+        </div>
+      </div>
+
+      {{/* Table of contents (optional right sidebar) */}}
+      <div class="col-xl-2 d-none d-xl-block">
+        <div class="docs-toc">
+          {{ .TableOfContents }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* Mobile sidebar toggle */}}
+  <div class="d-lg-none">
+    <button class="btn btn-outline-primary btn-sm position-fixed" type="button" data-bs-toggle="offcanvas" data-bs-target="#docsSidebarMobile" style="top: 80px; left: 10px; z-index: 1020;">
+      <i class="fas fa-bars"></i>
+      <span class="visually-hidden">Toggle navigation</span>
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="docsSidebarMobile">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Documentation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        {{ partial "docs/sidebar.html" . }}
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .docs-content {
+      max-width: none;
+    }
+
+    .docs-title {
+      color: var(--bs-primary);
+      border-bottom: 2px solid var(--bs-primary);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .docs-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .docs-body {
+      line-height: 1.7;
+    }
+
+    .docs-body h2,
+    .docs-body h3,
+    .docs-body h4 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .docs-body h2 {
+      border-bottom: 1px solid var(--bs-border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .docs-body pre {
+      background: var(--bs-light);
+      border: 1px solid var(--bs-border-color);
+      border-radius: 0.375rem;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+
+    [data-bs-theme="dark"] .docs-body pre {
+      background: var(--bs-dark);
+      border-color: var(--bs-border-color);
+    }
+
+    .docs-toc {
+      position: sticky;
+      top: 20px;
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      font-size: 0.9rem;
+    }
+
+    .docs-toc nav > ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .docs-toc ul {
+      padding-left: 1rem;
+      list-style: none;
+    }
+
+    .docs-toc a {
+      display: block;
+      padding: 0.25rem 0;
+      color: var(--bs-body-color);
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      padding-left: 0.5rem;
+    }
+
+    .docs-toc a:hover {
+      color: var(--bs-primary);
+      border-left-color: var(--bs-primary);
+    }
+
+    .docs-navigation {
+      border-top: 1px solid var(--bs-border-color);
+      padding-top: 2rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .docs-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+    }
+  </style>
+{{- end }}
+
+{{- define "template" }}
+  docs/single.html
+{{- end }}

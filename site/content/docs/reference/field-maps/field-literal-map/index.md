@@ -1,0 +1,10 @@
+---
+title: Field Literal Map
+dataFile: data/reference.fieldmaps.fieldliteralmap.yaml
+slug: field-literal-map
+aliases:
+  - /docs/Reference/FieldMaps/FieldLiteralMap
+  - /Reference/FieldMaps/FieldLiteralMap
+  - /learn/azure-devops-migration-tools/Reference/FieldMaps/FieldLiteralMap
+  - /learn/azure-devops-migration-tools/Reference/FieldMaps/FieldLiteralMap/index.md
+---

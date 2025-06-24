@@ -43,9 +43,9 @@ outputFormats:
     mediaType: "application/json"
     baseName: "pages"
 
-module:
-  imports:
-    - path: github.com/nkdAgility/NKDSiteTemplates/templates/ToolsSite
+# module:
+#   imports:
+#     - path: github.com/nkdAgility/NKDSiteTemplates/templates/ToolsSite
 
 markup:
   goldmark:

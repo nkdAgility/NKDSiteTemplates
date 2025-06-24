@@ -1,0 +1,10 @@
+---
+title: Field To Field Multi Map
+dataFile: data/reference.fieldmaps.fieldtofieldmultimap.yaml
+slug: field-to-field-multi-map
+aliases:
+  - /docs/Reference/FieldMaps/FieldToFieldMultiMap
+  - /Reference/FieldMaps/FieldToFieldMultiMap
+  - /learn/azure-devops-migration-tools/Reference/FieldMaps/FieldToFieldMultiMap
+  - /learn/azure-devops-migration-tools/Reference/FieldMaps/FieldToFieldMultiMap/index.md
+---
