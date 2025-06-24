@@ -60,3 +60,6 @@ markup:
       attribute:
         block: true
         title: true
+
+module:
+  replacements: github.com/nkdAgility/NKDSiteTemplates/module -> ../module

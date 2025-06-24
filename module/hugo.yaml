@@ -1,7 +1,7 @@
-title: Demo Site
+title: Azure DevOps Migration Tools
 
-publishDir: ../ToolSite_public
-resourceDir: ../ToolSite_resources
+publishDir: ../public
+resourceDir: ../resources
 
 summaryLength: 30
 

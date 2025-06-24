@@ -5,12 +5,3 @@ buildFuture: true
 buildExpired: true
 
 disableAliases: false
-
-module:
-  mounts:
-    - source: "../site/content"
-      target: "content"
-    - source: "../site/data"
-      target: "data"
-    - source: "../site/static"
-      target: "static"
