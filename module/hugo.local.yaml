@@ -8,9 +8,9 @@ disableAliases: false
 
 module:
   mounts:
-    - source: "../../site/content"
+    - source: "../site/content"
       target: "content"
-    - source: "../../site/data"
+    - source: "../site/data"
       target: "data"
-    - source: "../../site/static"
+    - source: "../site/static"
       target: "static"
