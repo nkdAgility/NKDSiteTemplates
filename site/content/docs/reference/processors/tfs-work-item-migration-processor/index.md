@@ -25,7 +25,7 @@ Overall, the `WorkItemMigrationContext` processor is a comprehensive tool for tr
 
 ---
 
-## <a name="WIQLQuery"></a>WIQL Query
+## WIQL Query
 
 The Work Item queries are all built using Work Item [Query Language (WIQL)](https://docs.microsoft.com/en-us/azure/devops/boards/queries/wiql-syntax). We only support flat quereis that have `FROM WorkItems` in the query.
 
@@ -53,11 +53,11 @@ Limit to specific work items (for testing purposes)
 "WIQLQuery": "SELECT [System.Id] FROM WorkItems WHERE [System.Id] in (123,456,789) AND [System.TeamProject] = @TeamProject AND [System.AreaPath] UNDER 'project\Team 1\' AND [System.WorkItemType] NOT IN ('Test Suite', 'Test Plan','Shared Steps','Shared Parameter','Feedback Request') ORDER BY [System.ChangedDate] desc"
 ```
 
-## <a name="NodeBasePath"></a>NodeBasePath Configuration
+## NodeBasePath Configuration
 
 Moved to the TfsNodeStructure
 
-# Iteration Maps and Area Maps
+## Iteration Maps and Area Maps
 
 Moved to the TfsNodeStructure
 
@@ -89,6 +89,6 @@ A complete list of [FieldMaps](../FieldMaps/index.md) are available.
 
 > Note: These mappings could also be achieved with other forms of Field mapper e.g. `RegexFieldMapConfig`, but the value mapper as an example is easy to understand
 
-# Removed Properties
+## Removed Properties
 
 - PrefixProjectToNodes - This option was removed in favour of the Area and Iteration Maps on [TfsNodeStructure](/Reference/v2/ProcessorEnrichers/TfsNodeStructure/)

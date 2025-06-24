@@ -19,11 +19,14 @@
       <p>{{ $data.description | markdownify }}</p>
     </div>
   {{ end }}
-
   {{/* Render Options as Table */}}
-  {{ if $data.options }}
-    <div class="class-options">
-      <h3>Options</h3>
+  {{ if $data.options }}    <div class="class-options">
+      <h3 id="options" class="position-relative">
+        Options
+        <a href="#options" class="text-decoration-none text-muted ms-2" title="Link to this heading">
+          <i class="fas fa-link fa-sm"></i> 
+        </a>
+      </h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -52,14 +55,21 @@
       </table>
     </div>
   {{ end }}
-
   {{/* Render Examples */}}
-  {{ if $data.configurationSamples }}
-    <div class="class-examples">
-      <h3>Examples</h3>
-      {{ range $data.configurationSamples }}
-        <div class="example-item">
-          <h4>{{ .name | title }}</h4>
+  {{ if $data.configurationSamples }}    <div class="class-examples">
+      <h3 id="examples" class="position-relative">
+        Examples
+        <a href="#examples" class="text-decoration-none text-muted ms-2" title="Link to this heading">
+          <i class="fas fa-link fa-sm"></i> 
+        </a>
+      </h3>
+      {{ range $data.configurationSamples }}        <div class="example-item">
+          <h4 id="example-{{ anchorize .name }}" class="position-relative">
+            {{ .name | title }}
+            <a href="#example-{{ anchorize .name }}" class="text-decoration-none text-muted ms-2" title="Link to this heading">
+              <i class="fas fa-link fa-sm"></i> 
+            </a>
+          </h4>
           {{ if .description }}
             <p>{{ .description | markdownify }}</p>
           {{ end }}
@@ -70,11 +80,14 @@
       {{ end }}
     </div>
   {{ end }}
-
   {{/* Additional Information */}}
-  {{ if or $data.status $data.processingTarget $data.className }}
-    <div class="class-metadata">
-      <h3>Metadata</h3>
+  {{ if or $data.status $data.processingTarget $data.className }}    <div class="class-metadata">
+      <h3 id="metadata" class="position-relative">
+        Metadata
+        <a href="#metadata" class="text-decoration-none text-muted ms-2" title="Link to this heading">
+          <i class="fas fa-link fa-sm"></i> 
+        </a>
+      </h3>
       <dl class="row">
         {{ if $data.className }}
           <dt class="col-sm-3">Class Name</dt>

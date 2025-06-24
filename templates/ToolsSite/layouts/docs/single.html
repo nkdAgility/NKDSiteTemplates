@@ -37,7 +37,10 @@
 
             {{/* Page content */}}
             <div class="docs-body">
-              {{ partial "docs/class-data.html" . }}
+              {{/* Optional class data */}}
+              {{ if .Params.dataFile }}
+                {{ partial "docs/class-data.html" . }}
+              {{ end }}
               {{ .Content }}
             </div>
 
@@ -47,11 +50,27 @@
             </div>
           </div>
         </div>
-
         {{/* Table of contents (optional right sidebar) */}}
         <div class="col-xl-2 d-none d-xl-block">
+          <h5>In this article</h5>
           <div class="docs-toc">
-            {{ .TableOfContents }}
+            <nav>
+              <ul>
+                {{/* Custom TOC items */}}
+                {{ if .Params.dataFile }}
+
+                  <li><a href="#options">Options</a></li>
+                  <li><a href="#examples">Examples</a></li>
+                  <li><a href="#metadata">Metadata </a></li>
+                  <li><hr /></li>
+                {{ end }}
+
+                {{/* Generated TOC */}}
+                {{ if .TableOfContents }}
+                  {{ .TableOfContents | safeHTML }}
+                {{ end }}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
