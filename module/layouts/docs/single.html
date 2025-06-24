@@ -1,10 +1,23 @@
 {{- define "main" }}
   <div class="container-fluid py-4">
-    <div class="container container-docs">
-      <div class="row">
-        {{/* Sidebar */}}
-        <div class="col-12 col-xl-3 docs-navbar-container">
-          {{ partial "docs/sidebar.html" . }}
+    <div class="row justify-content-center">
+      <div class="col-12" style="max-width: 1200px;">
+        <div class="row">
+          {{/* Sidebar - Hidden on smaller screens */}}
+          <div class="col-12 col-xl-3 docs-navbar-container d-none d-xl-block">
+            {{ partial "docs/sidebar.html" . }}
+          </div>
+          {{/* Dropdown Navigation for smaller screens */}}
+          <div class="col-12 d-xl-none mb-3">
+          <div class="dropdown">
+            <button class="btn btn-outline-primary dropdown-toggle w-100" type="button" id="docsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-book me-2"></i>
+              Documentation Navigation
+            </button>
+            <div class="dropdown-menu docs-dropdown-menu" aria-labelledby="docsDropdown">
+              {{ partial "docs/sidebar.html" . }}
+            </div>
+          </div>
         </div>
 
         {{/* Main content */}}

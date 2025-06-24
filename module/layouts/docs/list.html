@@ -1,14 +1,26 @@
 {{- define "main" }}
   <div class="container-fluid py-4">
-    <div class="container content-docs">
-      <div class="row">
-        {{/* Sidebar */}}
-        <div class="col-xs-12 col-md-3 docs-navbar-container">
-          {{ partial "docs/sidebar.html" . }}
-        </div>
-
-        {{/* Main content */}}
-        <div class="col-lg-9 col-xl-9">
+    <div class="row justify-content-center">
+      <div class="col-12" style="max-width: 1200px;">
+        <div class="row">
+          {{/* Sidebar - Hidden on smaller screens */}}
+          <div class="col-12 col-xl-3 docs-navbar-container d-none d-xl-block">
+            {{ partial "docs/sidebar.html" . }}
+          </div>
+          {{/* Dropdown Navigation for smaller screens */}}
+          <div class="col-12 d-xl-none mb-3">
+            <div class="dropdown">
+              <button class="btn btn-outline-primary dropdown-toggle w-100" type="button" id="docsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-book me-2"></i>
+                Documentation Navigation
+              </button>
+              <div class="dropdown-menu docs-dropdown-menu" aria-labelledby="docsDropdown">
+                {{ partial "docs/sidebar.html" . }}
+              </div>
+            </div>
+          </div>
+          {{/* Main content */}}
+          <div class="col-12 col-xl-9">
           <div class="docs-content">
             {{/* Page title */}}
             <div class="docs-header mb-4">
@@ -89,26 +101,8 @@
                 </div>
               </div>
             {{ end }}
-          </div>
+          </div>          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  {{/* Mobile sidebar toggle */}}
-  <div class="d-lg-none">
-    <button class="btn btn-outline-primary btn-sm position-fixed" type="button" data-bs-toggle="offcanvas" data-bs-target="#docsSidebarMobile" style="top: 80px; left: 10px; z-index: 1020;">
-      <i class="fas fa-bars"></i>
-      <span class="visually-hidden">Toggle navigation</span>
-    </button>
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="docsSidebarMobile">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title">Documentation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-      </div>
-      <div class="offcanvas-body">
-        {{ partial "docs/sidebar.html" . }}
       </div>
     </div>
   </div>
