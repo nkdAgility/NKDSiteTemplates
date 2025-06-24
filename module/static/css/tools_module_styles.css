@@ -1,5 +1,5 @@
 .container {
-  width: 1800px;
+  max-width: 1800px;
 }
 
 /* Menu item styling for light and dark themes */
@@ -181,8 +181,7 @@
 }
 
 .container-docs {
-  width: 1800px !important;
-  min-width: 1800px !important;
+  max-width: 1800px !important;
 }
 
 .docs-content {
