@@ -27,6 +27,7 @@ params:
   siteProdUrl: "https://organisation.org"
   supportEmail: "support@organisation.org"
   githubUrl: "https://github.com/organisation/repo"
+  editPage: "https://github.com/organisation/repo/edit/main/"
   googleTagId: "G-TSHSKGHDK"
   version: "#{GitVersion.SemVer}#"
   ring: "#{ToolsTemplates_AzureSitesConfig}#"

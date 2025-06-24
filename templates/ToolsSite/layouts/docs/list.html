@@ -1,93 +1,95 @@
 {{- define "main" }}
   <div class="container-fluid py-4">
-    <div class="row">
-      {{/* Sidebar */}}
-      <div class="col-lg-3 col-xl-2 d-none d-lg-block">
-        {{ partial "docs/sidebar.html" . }}
-      </div>
+    <div class="container content-docs">
+      <div class="row">
+        {{/* Sidebar */}}
+        <div class="col-xs-12 col-md-3 docs-navbar-container">
+          {{ partial "docs/sidebar.html" . }}
+        </div>
 
-      {{/* Main content */}}
-      <div class="col-lg-9 col-xl-10">
-        <div class="docs-content">
-          {{/* Page title */}}
-          <div class="docs-header mb-4">
-            <h1 class="docs-title">{{ .Title }}</h1>
-            {{ if .Params.description }}
-              <p class="docs-description text-muted">{{ .Params.description }}</p>
-            {{ else if .Content }}
-              <div class="docs-description">{{ .Content }}</div>
-            {{ end }}
-          </div>
+        {{/* Main content */}}
+        <div class="col-lg-9 col-xl-9">
+          <div class="docs-content">
+            {{/* Page title */}}
+            <div class="docs-header mb-4">
+              <h1 class="docs-title">{{ .Title }}</h1>
+              {{ if .Params.description }}
+                <p class="docs-description text-muted">{{ .Params.description }}</p>
+              {{ else if .Content }}
+                <div class="docs-description">{{ .Content }}</div>
+              {{ end }}
+            </div>
 
-          {{/* Documentation sections */}}
-          {{ if .Pages }}
-            <div class="docs-sections">
-              <div class="row">
-                {{ range .Pages.ByWeight.ByTitle }}
-                  <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100 docs-section-card">
-                      <div class="card-body">
-                        <h5 class="card-title">
-                          <a href="{{ .RelPermalink }}" class="text-decoration-none">
-                            <i class="fas fa-folder-open me-2 text-primary"></i>
-                            {{ .Title }}
-                          </a>
-                        </h5>
-                        {{ if .Params.description }}
-                          <p class="card-text text-muted">{{ .Params.description }}</p>
-                        {{ else if .Summary }}
-                          <p class="card-text text-muted">{{ .Summary }}</p>
-                        {{ end }}
+            {{/* Documentation sections */}}
+            {{ if .Pages }}
+              <div class="docs-sections">
+                <div class="row">
+                  {{ range .Pages.ByWeight.ByTitle }}
+                    <div class="col-md-6 col-lg-4 mb-4">
+                      <div class="card h-100 docs-section-card">
+                        <div class="card-body">
+                          <h5 class="card-title">
+                            <a href="{{ .RelPermalink }}" class="text-decoration-none">
+                              <i class="fas fa-folder-open me-2 text-primary"></i>
+                              {{ .Title }}
+                            </a>
+                          </h5>
+                          {{ if .Params.description }}
+                            <p class="card-text text-muted">{{ .Params.description }}</p>
+                          {{ else if .Summary }}
+                            <p class="card-text text-muted">{{ .Summary }}</p>
+                          {{ end }}
 
-                        {{/* Show child pages count */}}
+                          {{/* Show child pages count */}}
+                          {{ if .Pages }}
+                            <small class="text-muted">
+                              <i class="fas fa-file-alt me-1"></i>
+                              {{ len .Pages }} {{ if eq (len .Pages) 1 }}page{{ else }}pages{{ end }}
+                            </small>
+                          {{ end }}
+                        </div>
+
+                        {{/* Show first few child pages */}}
                         {{ if .Pages }}
-                          <small class="text-muted">
-                            <i class="fas fa-file-alt me-1"></i>
-                            {{ len .Pages }} {{ if eq (len .Pages) 1 }}page{{ else }}pages{{ end }}
-                          </small>
+                          <div class="card-footer bg-transparent">
+                            <small class="text-muted">
+                              {{ range first 3 .Pages.ByWeight.ByTitle }}
+                                <a href="{{ .RelPermalink }}" class="d-block text-decoration-none mb-1">
+                                  <i class="fas fa-file-alt me-1"></i>
+                                  {{ .Title }}
+                                </a>
+                              {{ end }}
+                              {{ if gt (len .Pages) 3 }}
+                                <span class="text-muted">... and {{ sub (len .Pages) 3 }} more</span>
+                              {{ end }}
+                            </small>
+                          </div>
                         {{ end }}
                       </div>
-
-                      {{/* Show first few child pages */}}
-                      {{ if .Pages }}
-                        <div class="card-footer bg-transparent">
-                          <small class="text-muted">
-                            {{ range first 3 .Pages.ByWeight.ByTitle }}
-                              <a href="{{ .RelPermalink }}" class="d-block text-decoration-none mb-1">
-                                <i class="fas fa-file-alt me-1"></i>
-                                {{ .Title }}
-                              </a>
-                            {{ end }}
-                            {{ if gt (len .Pages) 3 }}
-                              <span class="text-muted">... and {{ sub (len .Pages) 3 }} more</span>
-                            {{ end }}
-                          </small>
-                        </div>
-                      {{ end }}
                     </div>
-                  </div>
-                {{ end }}
+                  {{ end }}
+                </div>
               </div>
-            </div>
-          {{ end }}
+            {{ end }}
 
-          {{/* Getting started section */}}
-          {{ $gettingStarted := .Site.GetPage "/docs/getstarted" }}
-          {{ if $gettingStarted }}
-            <div class="docs-getting-started mt-5">
-              <div class="alert alert-primary" role="alert">
-                <h4 class="alert-heading">
-                  <i class="fas fa-rocket me-2"></i>
-                  Getting Started
-                </h4>
-                <p class="mb-3">New to the Azure DevOps Migration Tools? Start here for a quick introduction and setup guide.</p>
-                <a href="{{ $gettingStarted.RelPermalink }}" class="btn btn-primary">
-                  <i class="fas fa-play me-2"></i>
-                  Get Started
-                </a>
+            {{/* Getting started section */}}
+            {{ $gettingStarted := .Site.GetPage "/docs/getstarted" }}
+            {{ if $gettingStarted }}
+              <div class="docs-getting-started mt-5">
+                <div class="alert alert-primary" role="alert">
+                  <h4 class="alert-heading">
+                    <i class="fas fa-rocket me-2"></i>
+                    Getting Started
+                  </h4>
+                  <p class="mb-3">New to the Azure DevOps Migration Tools? Start here for a quick introduction and setup guide.</p>
+                  <a href="{{ $gettingStarted.RelPermalink }}" class="btn btn-primary">
+                    <i class="fas fa-play me-2"></i>
+                    Get Started
+                  </a>
+                </div>
               </div>
-            </div>
-          {{ end }}
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>
@@ -110,45 +112,6 @@
       </div>
     </div>
   </div>
-
-  <style>
-    .docs-section-card {
-      transition:
-        transform 0.2s ease-in-out,
-        box-shadow 0.2s ease-in-out;
-      border: 1px solid var(--bs-border-color);
-    }
-
-    .docs-section-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    [data-bs-theme="dark"] .docs-section-card:hover {
-      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-    }
-
-    .docs-section-card .card-title a {
-      color: var(--bs-body-color);
-    }
-
-    .docs-section-card .card-title a:hover {
-      color: var(--bs-primary);
-    }
-
-    .docs-section-card .card-footer a {
-      color: var(--bs-body-color);
-      font-size: 0.85rem;
-    }
-
-    .docs-section-card .card-footer a:hover {
-      color: var(--bs-primary);
-    }
-
-    .docs-getting-started {
-      margin-top: 3rem;
-    }
-  </style>
 {{- end }}
 
 {{- define "template" }}

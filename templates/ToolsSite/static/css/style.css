@@ -1,3 +1,7 @@
+.container {
+  max-width: 1200px;
+}
+
 /* Menu item styling for light and dark themes */
 .navbar-nav .nav-link {
   transition: all 0.3s ease;
@@ -49,4 +53,41 @@
 .navbar-nav .nav-link.active::before,
 .navbar-nav .nav-link.active::after {
   display: none !important;
+}
+
+.docs-section-card {
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  border: 1px solid var(--bs-border-color);
+}
+
+.docs-section-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .docs-section-card:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.docs-section-card .card-title a {
+  color: var(--bs-body-color);
+}
+
+.docs-section-card .card-title a:hover {
+  color: var(--bs-primary);
+}
+
+.docs-section-card .card-footer a {
+  color: var(--bs-body-color);
+  font-size: 0.85rem;
+}
+
+.docs-section-card .card-footer a:hover {
+  color: var(--bs-primary);
+}
+
+.docs-getting-started {
+  margin-top: 3rem;
 }

@@ -6,6 +6,7 @@ resourceDir: ../resources
 summaryLength: 30
 
 enableRobotsTXT: true
+enableGitInfo: true
 
 # Disable default taxonomies (tags and categories)
 taxonomies: {}

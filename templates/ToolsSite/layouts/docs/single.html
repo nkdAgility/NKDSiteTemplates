@@ -1,55 +1,58 @@
 {{- define "main" }}
   <div class="container-fluid py-4">
-    <div class="row">
-      {{/* Sidebar */}}
-      <div class="col-lg-3 col-xl-2 d-none d-lg-block">
-        {{ partial "docs/sidebar.html" . }}
-      </div>
+    <div class="container content-docs">
+      <div class="row">
+        {{/* Sidebar */}}
+        <div class="col-xs-12 col-md-3 docs-navbar-container">
+          {{ partial "docs/sidebar.html" . }}
+        </div>
 
-      {{/* Main content */}}
-      <div class="col-lg-9 col-xl-8">
-        <div class="docs-content">
-          {{/* Breadcrumbs */}}
-          {{ partial "docs/breadcrumbs.html" . }}
+        {{/* Main content */}}
+        <div class="col-lg-9 col-xl-7">
+          <div class="docs-content">
+            {{/* Breadcrumbs */}}
+            {{ partial "docs/breadcrumbs.html" . }}
 
-          {{/* Page title */}}
-          <div class="docs-header mb-4">
-            <h1 class="docs-title">{{ .Title }}</h1>
-            {{ if .Params.description }}
-              <p class="docs-description text-muted">{{ .Params.description }}</p>
-            {{ end }}
+            {{/* Page title */}}
+            <div class="docs-header mb-4">
+              <h1 class="docs-title">{{ .Title }}</h1>
+              {{ if .Params.description }}
+                <p class="docs-description text-muted">{{ .Params.description }}</p>
+              {{ end }}
 
-            {{/* Edit link if available */}}
-            {{ if .File }}
-              <div class="docs-meta mt-3">
-                <small class="text-muted">
-                  <i class="fas fa-clock me-1"></i>
-                  Last updated:
-                  {{ .Lastmod.Format "January 2, 2006" }}
-                  {{ if .Site.Params.editPage }}
-                    | <a href="{{ .Site.Params.editPage }}/{{ .File.Path }}" target="_blank" class="text-decoration-none"> <i class="fas fa-edit me-1"></i>Edit this page </a>
-                  {{ end }}
-                </small>
-              </div>
-            {{ end }}
-          </div>
+              {{/* Edit link if available */}}
+              {{ if .File }}
+                <div class="docs-meta mt-3">
+                  <small class="text-muted">
+                    <i class="fas fa-clock me-1"></i>
+                    Last updated:
+                    {{ .Lastmod.Format "January 2, 2006" }}
+                    {{ if .Site.Params.editPage }}
+                      | <a href="{{ .Site.Params.editPage }}/{{ .File.Path }}" target="_blank" class="text-decoration-none"> <i class="fas fa-edit me-1"></i>Edit this page </a>
+                    {{ end }}
+                  </small>
+                </div>
+              {{ end }}
+            </div>
 
-          {{/* Page content */}}
-          <div class="docs-body">
-            {{ .Content }}
-          </div>
+            {{/* Page content */}}
+            <div class="docs-body">
+              {{ partial "docs/class-data.html" . }}
+              {{ .Content }}
+            </div>
 
-          {{/* Page navigation */}}
-          <div class="docs-navigation mt-5">
-            {{ partial "docs/page-navigation.html" . }}
+            {{/* Page navigation */}}
+            <div class="docs-navigation mt-5">
+              {{ partial "docs/page-navigation.html" . }}
+            </div>
           </div>
         </div>
-      </div>
 
-      {{/* Table of contents (optional right sidebar) */}}
-      <div class="col-xl-2 d-none d-xl-block">
-        <div class="docs-toc">
-          {{ .TableOfContents }}
+        {{/* Table of contents (optional right sidebar) */}}
+        <div class="col-xl-2 d-none d-xl-block">
+          <div class="docs-toc">
+            {{ .TableOfContents }}
+          </div>
         </div>
       </div>
     </div>
