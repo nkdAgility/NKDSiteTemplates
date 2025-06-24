@@ -1,6 +1,0 @@
-baseURL: /
-Environment: "preview"
-minifyOutput: true
-
-buildDrafts: true
-buildFuture: true

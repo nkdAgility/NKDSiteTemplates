@@ -32,7 +32,7 @@ params:
   googleTagId: "G-TSHSKGHDK"
   version: "#{GitVersion.SemVer}#"
   ring: "#{ToolsTemplates_AzureSitesConfig}#"
-  downloadUrl: "https://github.com/nkdAgility/azure-devops-migration-tools/releases/latest"
+  downloadUrl: "/download"
 
 # Enable sitemap and robots.txt
 sitemap:

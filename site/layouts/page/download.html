@@ -1,4 +1,55 @@
 {{- define "main" }}
+  <section class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-4 mb-3">Download Azure DevOps Migration Tools</h1>
+      <h2 class="h4 text-muted">Open source and free to use.</h2>
+    </div>
+
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <div class="mb-4">
+            <i class="fa-brands fa-windows" style="font-size: 4rem; color: #0078d4;"></i>
+          </div>
+          <a href="https://github.com/nkdAgility/azure-devops-migration-tools/releases/latest" class="btn btn-primary btn-lg w-100" target="_blank"> <i class="fa-solid fa-download me-2"></i>Windows </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <div class="mb-4">
+            <i class="fa-brands fa-linux" style="font-size: 4rem; color: #FCC624;"></i>
+          </div>
+          <a href="https://github.com/nkdAgility/azure-devops-migration-tools/releases/latest" class="btn btn-primary btn-lg w-100 disabled" target="_blank"> <i class="fa-solid fa-download me-2"></i>Linux </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="text-center p-4 border rounded shadow-sm h-100">
+          <div class="mb-4">
+            <i class="fa-brands fa-apple" style="font-size: 4rem; color: #000000;"></i>
+          </div>
+          <a href="https://github.com/nkdAgility/azure-devops-migration-tools/releases/latest" class="btn btn-primary btn-lg w-100 disabled" target="_blank"> <i class="fa-solid fa-download me-2"></i>Mac </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-lg-8 col-md-10">
+        <div class="text-center text-muted small">
+          By downloading and using the Azure DevOps Migration Tools, you agree to the <a href="https://github.com/nkdAgility/azure-devops-migration-tools/blob/main/LICENSE" target="_blank">license terms</a> and
+          <a href="https://nkdagility.com/company/privacy/" target="_blank">privacy statement</a>.
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8">
+        <div class="text-center p-4 bg-light rounded">
+          <h4 class="mb-3">Want new features sooner?</h4>
+          <p class="mb-0">Get the <a href="https://github.com/nkdAgility/azure-devops-migration-tools/releases" target="_blank" class="fw-bold">Preview build</a> instead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 {{- end }}
 {{- define "template" }}
   page/download.html
