@@ -82,9 +82,8 @@
       </div>
     </div>
   </div>
-
   <!-- Compatibility Section -->
-  <div class="bg-light py-5">
+  <div class="py-5" style="background-color: var(--bs-secondary-bg);">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6">
@@ -101,13 +100,13 @@
           <div class="compatibility-visual p-4 text-center">
             <div class="row g-3">
               <div class="col-6">
-                <div class="compatibility-box p-3 bg-white rounded shadow-sm">
+                <div class="compatibility-box p-3 rounded shadow-sm">
                   <i class="fas fa-server fa-2x text-primary mb-2"></i>
                   <div class="fw-bold">TFS 2013+</div>
                 </div>
               </div>
               <div class="col-6">
-                <div class="compatibility-box p-3 bg-white rounded shadow-sm">
+                <div class="compatibility-box p-3 rounded shadow-sm">
                   <i class="fas fa-cloud fa-2x text-primary mb-2"></i>
                   <div class="fw-bold">Azure DevOps</div>
                 </div>
@@ -258,9 +257,8 @@
       </div>
     </div>
   </div>
-
   <!-- Contributors Section -->
-  <div class="bg-light py-5">
+  <div class="py-5" style="background-color: var(--bs-secondary-bg);">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 mx-auto">
@@ -317,7 +315,8 @@
     }
 
     .stat-card {
-      background: white;
+      background: var(--bs-body-bg);
+      border: 1px solid var(--bs-border-color);
       border-radius: 12px;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
@@ -333,7 +332,8 @@
       transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
-      background: white;
+      background: var(--bs-body-bg);
+      border-color: var(--bs-border-color);
     }
 
     .feature-card:hover,
@@ -350,8 +350,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(0, 122, 204, 0.1);
+      background: rgba(var(--bs-primary-rgb), 0.1);
       border-radius: 50%;
+    }
+
+    .compatibility-box {
+      background: var(--bs-body-bg) !important;
+      border: 1px solid var(--bs-border-color);
     }
 
     .compatibility-box:hover {
@@ -377,6 +382,11 @@
 
     .min-vh-50 {
       min-height: 50vh;
+    }
+
+    /* Dark mode specific overrides */
+    [data-bs-theme="dark"] .bg-light {
+      background-color: var(--bs-gray-900) !important;
     }
 
     @media (max-width: 768px) {
