@@ -5,7 +5,7 @@
 
 {{ if $pages }}
   <ul class="sidebar-nav">
-    {{ range $pages.ByWeight.ByTitle }}
+    {{ range $pages.ByWeight }}
       {{ $isActive := eq .RelPermalink $current.RelPermalink }}
       {{ $isParent := $current.IsDescendant . }}
       {{ $hasChildren := .Pages }}
@@ -27,7 +27,11 @@
               {{ else }}
                 <i class="fas fa-file-alt me-2"></i>
               {{ end }}
-              {{ .Title }}
+              {{ if .Params.short_title }}
+                {{ .Params.short_title }}
+              {{ else }}
+                {{ .Title }}
+              {{ end }}
             </a>
           {{ end }}
         {{ end }}

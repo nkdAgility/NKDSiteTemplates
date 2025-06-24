@@ -1,5 +1,6 @@
 ---
 title: "How-to: Migrating Plans and Suites"
+short_title: "Migrating Plans and Suites"
 discussionId:
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Setting up the Azure DevOps Migration Tools
 discussionId:
+weight: 2
 ---
 
 To use these tools you will need to install them and configure your target environment (TFS or Azure DevOps). The following pages will guide you through the process:

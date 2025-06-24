@@ -1,5 +1,6 @@
 ---
 title: "How-To: User Mappings"
+short_title: "User Mappings"
 discussionId:
 ---
 
